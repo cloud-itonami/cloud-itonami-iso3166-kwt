@@ -1,0 +1,13 @@
+;; Real-world organization location / contact.
+;; :head-role is institutional title only — no personal names.
+{:ooyake-id "gov.kwt"
+  :official-url "https://www.e.gov.kw/"
+  :name-en "Kuwait"
+  :name-local "الكويت"
+  :wikidata "Q817"
+  :head-role "CPT / public procurement"
+  :head-role-note "institutional office title only; personal names of current office-holders are intentionally NOT stored"
+  :contact-page "https://www.wikidata.org/wiki/Q35178"
+  :sourced-from "com-etzhayyim-ooyake gov-units (verbatim where present)"
+  :hq {:line-en "Kuwait City" :country "kwt" :kind "capital" :provenance "https://www.wikidata.org/wiki/Q35178" :last-verified "2026-07-10" :sourcing "authoritative"}
+}
