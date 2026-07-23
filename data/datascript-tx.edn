@@ -1,0 +1,58 @@
+;; data/datascript-tx.edn — DataScript tx-data derived from src/statute/facts.cljc
+;; `statute.facts/catalog` (ADR-2607141700). Same shape as sibling files.
+
+[#:statute{:id "kwt.law-49-2016-general-tenders-law"
+           :title "General Tenders Law"
+           :jurisdiction "KWT"
+           :kind :law
+           :law-number "Law No. 49 of 2016 (as amended by Law No. 74 of 2019)"
+           :url "https://www.capt.gov.kw/ar/laws/"
+           :url-provenance :capt-gov-kw-official-tender-authority
+           :enacted-date "2016-07-31"
+           :retrieved-at "2026-07-23"
+           :topic [:public-procurement :market-entry]}
+ #:statute{:id "kwt.law-1-2016-commercial-companies-law"
+           :title "Commercial Companies Law"
+           :jurisdiction "KWT"
+           :kind :law
+           :law-number "Law No. 1 of 2016 (as amended by Law No. 15 of 2017 and Law No. 79 of 2019)"
+           :url "https://kdipa.gov.kw/invest-in-kuwait/economic-laws/"
+           :url-provenance :kdipa-gov-kw-official-investment-authority
+           :retrieved-at "2026-07-23"
+           :topic [:corporate-governance :incorporation]}
+ #:statute{:id "kwt.law-116-2013-direct-investment-promotion-law"
+           :title "Law for the Promotion of Direct Investment in the State of Kuwait"
+           :jurisdiction "KWT"
+           :kind :law
+           :law-number "Law No. 116 of 2013"
+           :url "https://kdipa.gov.kw/about-kdipa/law-decisions/"
+           :url-provenance :kdipa-gov-kw-official-investment-authority
+           :retrieved-at "2026-07-23"
+           :topic [:foreign-investment :market-entry]}
+ #:statute{:id "kwt.decree-3-1955-income-tax-law"
+           :title "Kuwaiti Income Tax"
+           :jurisdiction "KWT"
+           :kind :law
+           :law-number "Amiri Decree No. 3 of 1955 (as amended by Law No. 2 of 2008)"
+           :url "https://kdipa.gov.kw/invest-in-kuwait/economic-laws/"
+           :url-provenance :kdipa-gov-kw-official-investment-authority
+           :retrieved-at "2026-07-23"
+           :topic [:tax]}
+ #:statute{:id "kwt.decree-law-157-2024-multinational-enterprise-tax-law"
+           :title "Tax Law on Multinational Enterprise Groups"
+           :jurisdiction "KWT"
+           :kind :law
+           :law-number "Decree-Law No. 157 of 2024"
+           :url "https://www.mof.gov.kw/"
+           :url-provenance :mof-gov-kw-official-finance-ministry
+           :retrieved-at "2026-07-23"
+           :topic [:tax]}
+ #:statute{:id "kwt.law-6-2010-private-sector-labour-law"
+           :title "Private Sector Labour Law"
+           :jurisdiction "KWT"
+           :kind :law
+           :law-number "Law No. 6 of 2010"
+           :url "https://manpower.gov.kw/LaborLaw.aspx"
+           :url-provenance :pam-gov-kw-official-manpower-authority
+           :retrieved-at "2026-07-23"
+           :topic [:labor]}]
