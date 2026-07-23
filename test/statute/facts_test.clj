@@ -1,0 +1,29 @@
+(ns statute.facts-test
+  (:require [clojure.string :as str]
+            [clojure.test :refer [deftest is]]
+            [statute.facts :as facts]))
+
+(deftest kwt-has-spec-basis
+  (let [sb (facts/spec-basis "KWT")]
+    (is (= 6 (count sb)))
+    (is (every? #(str/starts-with? (:statute/url %) "https://") sb))
+    (is (every? :statute/law-number sb))))
+
+(deftest unknown-jurisdiction-has-no-spec-basis
+  (is (nil? (facts/spec-basis "ATL")))
+  (is (nil? (facts/spec-basis "ZZZ"))))
+
+(deftest coverage-is-honest
+  (let [c (facts/coverage ["KWT" "JPN" "ATL"])]
+    (is (= 3 (:requested c)))
+    (is (= 1 (:covered c)))
+    (is (= ["ATL" "JPN"] (:missing-jurisdictions c)))))
+
+(deftest by-topic-filters
+  (is (= ["kwt.law-6-2010-private-sector-labour-law"]
+         (mapv :statute/id (facts/by-topic "KWT" :labor))))
+  (is (= ["kwt.law-116-2013-direct-investment-promotion-law"]
+         (mapv :statute/id (facts/by-topic "KWT" :foreign-investment))))
+  (is (= 2 (count (facts/by-topic "KWT" :tax))))
+  (is (empty? (facts/by-topic "KWT" :data-protection)))
+  (is (empty? (facts/by-topic "ATL" :tax))))

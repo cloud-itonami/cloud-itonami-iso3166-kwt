@@ -3,7 +3,48 @@
  :itonami.blueprint/iso3166 "KWT"
  :itonami.blueprint/domain :public-sector/market-entry-compliance
  :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:kuwaiti-sme-market-access :public-spend-transparency :cross-border-friction-reduction]
  :itonami.blueprint/governor :market-entry-compliance-governor
  :itonami.blueprint/robotics false
  :itonami.blueprint/required-technologies [:identity :forms :dmn :bpmn :audit-ledger]
- :itonami.blueprint/status :public-oss}
+ :itonami.blueprint/status :public-oss
+ :itonami.blueprint/maturity :implemented
+ :itonami.blueprint/implemented-slice
+ "MarketEntry-LLM Advisor ⊣ Market-Entry Compliance Governor, a REAL
+ compiled `kotoba-lang/langgraph` StateGraph (`:intake -> :advise ->
+ :govern -> :decide -+-> :commit / :request-approval -> :commit /
+ :hold`), append-only audit ledger. Seven governor checks, in priority
+ order, ALL HARD violations a human approver cannot override:
+ spec-basis citation, evidence-checklist completeness, Kuwait
+ commercial-registration entity verification (`:requires-kw-entity?`
+ / `:has-kw-entity?`, grounded in Article 31 of the General Tenders
+ Law, Law No. 49/2016 -- Kuwaiti Commercial Register + CAPT
+ supplier/contractor registration), local-content commitment
+ shortfall (`:requires-local-content-commitment?` /
+ `:national-industry-purchase-percent` /
+ `:local-subcontract-percent`, the FLAGSHIP check for this
+ jurisdiction, grounded in Article 87 of the same law -- the National-
+ Industry and Local-Contractor Preference that requires a FOREIGN
+ contractor awarded a Kuwaiti public tender to independently clear
+ TWO separate statutory 30% floors, not a single boolean/number check
+ like every sibling jurisdiction's flagship), independent engagement-
+ fee recompute (base + months x rate), double-draft guard, double-
+ submit guard, plus a SOFT confidence-floor/actuation gate.
+ `:filing/draft` and `:filing/submit` (real CAPT portal actuation)
+ never auto-commit in any phase; `interrupt-before
+ #{:request-approval}` pauses escalated requests for real human
+ sign-off via a checkpointer, and BOTH `:commit` and `:hold` durably
+ append to the real audit ledger (`store/append-ledger!`). Store has
+ a `MemStore` and a `DatomicStore` (via `kotoba-lang/langchain-store`,
+ no hand-rolled EDN-blob codec), proven equivalent by a shared
+ store-contract test. `statute.facts` additionally carries 6 Kuwait
+ laws (General Tenders Law No. 49/2016, Commercial Companies Law No.
+ 1/2016, Direct Investment Promotion Law No. 116/2013, Kuwaiti Income
+ Tax Decree No. 3/1955, Tax Law on Multinational Enterprise Groups
+ Decree-Law No. 157/2024, Private Sector Labour Law No. 6/2010)
+ confirmed this session against capt.gov.kw / kdipa.gov.kw /
+ mof.gov.kw / manpower.gov.kw -- several via the Internet Archive
+ Wayback Machine where the live site returned a genuine Cloudflare
+ bot-detection challenge (capt.gov.kw) or otherwise failed to connect
+ (kdipa.gov.kw 503, mof.gov.kw / manpower.gov.kw timeout); the live
+ challenge was never bypassed."}
