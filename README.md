@@ -29,7 +29,7 @@ clojure -M:dev:test
   Authority for Manpower, manpower.gov.kw).
 
 Every citation above was fetched and read directly this session (see
-`src/marketentry/facts.cljc` and `src/statute/facts.cljc` docstrings
+`src/marketentry/facts.cljk` and `src/statute/facts.cljk` docstrings
 for exact URLs and verbatim confirmation). CAPT's live site returns a
 genuine Cloudflare bot-detection challenge and KDIPA's/MOF's/PAM's
 live sites either errored or timed out -- those were fetched via the
@@ -38,7 +38,7 @@ could not be independently confirmed this session (e.g. a specific
 corporate income-tax rate, a Zakat/National-Labor-Support-Tax law
 number, or a Council-of-Ministers-adjusted local-content percentage
 beyond Article 87's own stated 30% floor) are disclosed in
-`src/statute/facts.cljc`, not filled in with an invented figure.
+`src/statute/facts.cljk`, not filled in with an invented figure.
 
 AGPL-3.0-or-later.
 
@@ -50,7 +50,7 @@ Alongside the market-entry / statute catalogs, this repo carries a
 `com-junkawasaki/root`) — national dishes, protected products, beverages,
 crafts, festivals and heritage sites for Kuwait:
 
-- `src/culture/facts.cljc` — the catalog, source of truth (keyed by
+- `src/culture/facts.cljk` — the catalog, source of truth (keyed by
   uppercase ISO3, mirroring `statute.facts`).
 - `schema/culture.edn` — DataScript schema.
 - `data/culture-tx.edn` — derived DataScript tx-data (regenerated from

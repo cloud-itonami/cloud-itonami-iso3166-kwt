@@ -72,8 +72,8 @@
   and filing on the client's behalf beyond checklist/draft assistance
   routes to Kuwaiti-licensed counsel or a registered agent
 - every requirement cites the official portal or regulation, never
-  invented — see `src/marketentry/facts.cljc` and
-  `src/statute/facts.cljc` for the exact URLs fetched and read this
+  invented — see `src/marketentry/facts.cljk` and
+  `src/statute/facts.cljk` for the exact URLs fetched and read this
   session (several via the Internet Archive Wayback Machine where the
   live government site returned a genuine Cloudflare bot-detection
   challenge or otherwise failed to connect -- never bypassed), and
