@@ -3,7 +3,7 @@
 **`:implemented`** for **KWT**. Flagship `local-content-shortfall` (Article 87), entity `kw-entity-missing` (Article 31).
 
 ```
-clojure -M:dev:test
+kbb -M:dev:test
 ```
 
 ## Market-entry / statute catalogs
